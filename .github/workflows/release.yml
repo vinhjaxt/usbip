@@ -39,7 +39,7 @@ jobs:
           RUSTFLAGS: ${{ matrix.rustflags }}
         run: |
           set -euo pipefail
-          cargo build --locked --release --target "${{ matrix.target }}" --bin usbip
+          cargo build --release --target "${{ matrix.target }}" --bin usbip
           cp "${{ matrix.binary }}" "${{ matrix.output }}"
 
       - uses: actions/upload-artifact@v4
